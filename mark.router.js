@@ -26,6 +26,15 @@ router.get("/getStudentMark",async(req,res)=>{
     }
 })
 
+router.get("/getStudentMark123",async(req,res)=>{
+    try {
+        const result = await markDetail.find();
+        res.status(200).json({"status":"success","message":"Create mark successfully","result": result})
+    } catch (error) {
+        res.status(500).json({"status":"failure","message":"something we wrong ","result":error.message})
+    }
+})
+
 // perticuler data recive
 router.get("/reciveData",async(req,res)=>{
     // console.log("855")
